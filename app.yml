@@ -1,9 +1,9 @@
 # mysql配置
 addr: 127.0.0.1:3306
 user: root
-pass: root
-charset : utf8
-slave_id: 1001 #slave ID
+pass: gorm
+charset : utf8mb4
+slave_id: 1 #slave ID
 flavor: mysql #mysql or mariadb,默认mysql
 
 #系统相关配置
@@ -71,8 +71,8 @@ redis_addrs: 127.0.0.1:6379 #redis地址，多个用逗号分隔
 #规则配置
 rule:
   -
-    schema: eseap #数据库名称
-    table: t_user #表名称
+    schema: blog #数据库名称
+    table: users #表名称
     #order_by_column: id #排序字段，存量数据同步时不能为空
     #column_lower_case:false #列名称转为小写,默认为false
     #column_upper_case:false#列名称转为大写,默认为false
@@ -91,8 +91,8 @@ rule:
 
     #redis相关
     redis_structure: string # 数据类型。 支持string、hash、list、set、sortedset类型(与redis的数据类型一致)
-    #redis_key_prefix: USER_ #key的前缀
-    #redis_key_column: USER_NAME #使用哪个列的值作为key，不填写默认使用主键
+    redis_key_prefix: USER_ #key的前缀
+    redis_key_column: uuid #使用哪个列的值作为key，不填写默认使用主键
     #redis_key_formatter: '{{.ID}}|{{.USER_NAME}}'
     #redis_key_value: user #KEY的值（固定值）；当redis_structure为hash、list、set、sortedset此值不能为空
     #redis_hash_field_prefix: _CARD_ #hash的field前缀，仅redis_structure为hash时起作用

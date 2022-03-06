@@ -15,7 +15,7 @@
  * limitations under the License.
  * </p>
  */
-package main
+package datasyn
 
 import (
 	"flag"
@@ -54,7 +54,7 @@ func init() {
 	flag.Usage = usage
 }
 
-func main() {
+func DataSyn() {
 
 	//stockFlag = true
 
